@@ -1,0 +1,198 @@
+main {
+  margin-bottom: 120px;
+}
+
+
+/* 投稿 (フッター)*/
+.footer {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+  bottom: 50px;
+}
+
+.post_create {
+  background-color: bisque;
+  height: 100%;
+  width: 93%;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.post_lists {
+  margin: 50px;
+}
+
+.post_list {
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+.post_hover {
+  padding: 8px;
+}
+
+.post_hover:hover {
+}
+
+.post_top {
+  display: inline-block;
+}
+
+.post_solve {
+  display: inline-block;
+}
+
+.post_name {
+  font-weight: bold;
+}
+
+.post_time {
+  color: rgb(83, 83, 83);
+  font-size: 12px;
+}
+
+.post_subject {
+  margin-bottom: 20px;
+}
+
+.post_images {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.post_images img {
+  width: 40%;
+}
+
+.post_form {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.post_form_subject {
+  height: 50%;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.post_form_text {
+  width: 57%;
+  height: 70%;
+  margin-right: 20px;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.post_form_btn {
+  position: absolute;
+  right: 0;
+  height: 90%;
+  width: 90px;
+  font-size: 23px;
+}
+
+
+.preview {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -600px;
+  background-color: wheat;
+  border-radius: 5px;
+}
+
+.preview img {
+  width: 20%;
+  height: 100%;
+  margin: 30px;
+}
+
+.preview p {
+  display: none;
+}
+
+/* 返信 */
+.reply {
+  margin-left: 30px;
+}
+
+.reply_lists {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
+.reply_list {
+  background-color: rgb(223, 219, 219);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+details {
+  transition: 1.5s;
+}
+
+.reply_summary {
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.reply_summary2 {
+  cursor: pointer;
+    width: fit-content;
+    margin-top: 8px;
+    font-size: 14px;
+    display: block;
+}
+
+
+summary {
+  cursor: pointer;
+}
+
+.summary_span {
+  color: rgb(95, 95, 224);
+}
+
+.summary_span:hover {
+  border-bottom: 1px solid; 
+}
+
+.summary_p {
+  position: absolute;
+  left: 930px;
+  top: 45px;
+}
+
+.but_summary {
+  margin-top: 15px;
+}
+
+
+
+@media screen and (max-width:480px) {
+  .preview {
+    margin-top: -200px;
+  }
+  
+  .preview img {
+    margin: 10px;
+  }
+
+  .summary_p {
+    display: none;
+  }
+
+  .reply_summary2 {
+    display: none;
+  }
+}
