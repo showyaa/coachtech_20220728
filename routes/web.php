@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ホーム
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->middleware(['auth']);
+
+Route::get('/teacher', [HomeController::class, 'teacher'])->middleware(['auth:teacher']);
+
+Route::get('/welcome', [HomeController::class, 'welcome']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,6 +42,8 @@ Route::get('/teacher/logout', [LogoutController::class, 'teacher_logout']);
 // 投稿(Post)
 Route::prefix('post')->group(function () {
     Route::post('/create', [PostController::class, 'create']);
+    Route::post('/edit', [PostController::class, 'edit']);
+    Route::post('/delete', [PostController::class, 'delete']);
 });
 
 // 返信(Reply)

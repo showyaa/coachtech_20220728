@@ -30,4 +30,28 @@ class HomeController extends Controller
 
         return view('home', $param);
     }
+
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
+    public function teacher()
+    {
+        $user = Auth::user();
+        $teacher = Auth::guard('teacher')->user();
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        $subjects = Subject::all();
+
+        $param = [
+            'user' => $user,
+            'teacher' => $teacher,
+            'posts' => $posts,
+            'subjects' => $subjects,
+        ];
+
+
+
+        return view('teacher', $param);
+    }
 }

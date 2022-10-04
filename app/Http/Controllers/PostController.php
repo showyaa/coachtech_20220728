@@ -33,4 +33,18 @@ class PostController extends Controller
         }
         return redirect('/');
     }
+
+    public function edit(Request $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        Post::where('id', $request->id)->update($form);
+        return redirect('/');
+    }
+
+    public function delete(Request $request)
+    {
+        Post::find($request->id)->delete();
+        return redirect('/');
+    }
 }

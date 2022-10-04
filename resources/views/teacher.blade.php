@@ -21,9 +21,9 @@
     @can('isManager')
     管理者
     @endcan
-    @can('isTeacher')
+    @if($teacher-> role >= 2)
     先生
-    @endcan
+    @endif
   </header>
   <main>
     <div class="post_lists">
@@ -67,23 +67,18 @@
             <input type="hidden" name="check" value="2">
             <input type="submit" value="解決した">
           </form>
+          <form action="/post/delete" method="post">
+            <input type="submit" value="削除">
+          </form>
           <div class="edit">
             <input type="button" value="編集" id="openBtn_{{$post->id}}" class="openBtn">
             <div class="modal" id="modal_{{$post->id}}">
               <div class="modal_content">
                 <div class="modal_inner">
-                  <input type="button" id="closeBtn_{{$post->id}}" class="closeBtn" value="✕">
                   <form action="/post/edit" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$post->id}}">
-                    <textarea name="text" id="" cols="30" rows="10">{{$post->text}}</textarea>
-                    <input type="submit" value="更新">
+                    <input type="text" name="text" value="{{$post->text}}">
                   </form>
-                  <form action="/post/delete" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$post->id}}">
-                    <input type="submit" value="削除">
-                  </form>
+                  <input type="button" id="closeBtn_{{$post->id}}" class="closeBtn">
                 </div>
               </div>
             </div>

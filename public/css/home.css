@@ -196,3 +196,37 @@ summary {
     display: none;
   }
 }
+
+.edit {
+  display: inline-block;
+  margin-left: 850px;
+}
+
+.openBtn {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+.modal_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modal_inner {
+  background-color: white;
+  width: 500px;
+  text-align: center;
+  padding: 50px;
+}

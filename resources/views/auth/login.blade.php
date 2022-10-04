@@ -51,6 +51,14 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
+
+            <div class="register">
+                <a href="/register">未登録の方はこちら</a>
+            </div>
+
+            <div class="teacher">
+                <a href="/teacher/login">先生用ログイン画面へ</a>
+            </div>
         </form>
     </x-auth-card>
 </x-guest-layout>

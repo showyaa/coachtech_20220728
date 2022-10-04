@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function replies() {
         return $this->hasMany('App\Models\Reply');
     }
+
+    public function relation() {
+        return $this->hasOne('App\Models\Relation');
+    }
 }

@@ -51,4 +51,8 @@ class Teacher extends Authenticatable
     public function replies() {
         return $this->hasMany('App\Models\Reply');
     }
+
+    public function relations() {
+        return $this->hasMany('App\Models\Relation');
+    }
 }
